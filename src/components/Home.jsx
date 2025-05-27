@@ -1,276 +1,115 @@
-import React, { useState, useEffect } from "react";
-import { AiOutlineMenu } from "react-icons/ai";
+import React, { useState } from 'react'
+import { FiArrowRight } from "react-icons/fi";
+import { HiMenuAlt3 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
-import { motion } from "framer-motion";
+import AutoScrollImage from './Carusel';
 const Home = () => {
-  const [bgColor, setBgColor] = useState("bg-transparent");
-  const [activeMenu, setActiveMenu] = useState(false)
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 1) {
-        setBgColor("bg-[#459efe]");
-      } else {
-        setBgColor("bg-transparent");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+  const [activeMenu,setActiveMenu]=useState(false)
   return (
     <div>
-      <div className="sec-1">
-
-        <div className={`w-full fixed top-0 right-0 z-50 left-0 h-24 mx-auto px-5 py-8 transition-all duration-300 ${bgColor}`}>
-          <div className='flex justify-between items-center max-w-[1140px] mx-[12%]'>
-            <a href='' className='text-[17px] pl-10 logo text-white cursor-pointer font-bold'>Kredo</a>
-            <nav>
-              <ul className='md:flex hidden gap-5 text-white text-[500]'>
-                <li><a className='text-sm hover:underline hover:text-[#2c4ac0] font-semibold transition-all' href="#about">О нас </a></li>
-                <li><a className='text-sm hover:underline hover:text-[#2c4ac0] font-semibold  transition-all' href="#opportunities">Наши возможности</a></li>
-                <li><a className='text-sm hover:underline hover:text-[#2c4ac0] font-semibold  transition-all' href="#globe">Обратная связь</a></li>
-                <li><a className='text-sm hover:underline hover:text-[#2c4ac0] font-semibold  transition-all' href="#contacts">Контакты</a></li>
+       {/* Navbar */}
+        <div className='bg-black  w-full border-b-2 border-[#fff]'>
+              <header className='container flex items-center justify-between py-4 md:py-7'>
+              <a  href="/web/20241007013022/https://kredo.vip/">
+                <img className='md:h-auto h-14' src="./logo.svg" alt="" />
+              </a>
+              <ul className='lg:flex hidden items-center gap-x-7 text-white text-[18px] font-medium'>
+                <li>
+                    <a href="https://web.archive.org/web/20241007013652/https://kredo.vip/contacts">Контакты</a>
+                </li>
+                <li>
+                    <a href="https://web.archive.org/web/20241007013652/https://kredo.vip/contacts">Блог</a>
+                </li>
+                <li>
+                    <a href="https://web.archive.org/web/20241007013652/https://kredo.vip/contacts">Реферальная программа</a>
+                </li>
+                
               </ul>
-            </nav>
-            <AiOutlineMenu onClick={() => setActiveMenu(!activeMenu)} className='md:hidden transition-all duration-500 block text-white text-3xl cursor-pointer' />
-          </div>
-          {activeMenu && <motion.div
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="absolute lg:hidden transition-all duration-500 top-0 left-0 right-0 p-5 h-[240px] w-full px-8 bg-[#459efe]">
-            <IoMdClose className='md:hidden ml-auto  text-white transition-all duration-500 block text-3xl cursor-pointer' onClick={() => setActiveMenu(!activeMenu)} />
-            <nav>
-              <ul className='flex flex-col gap-y-3 text-white text-[500]'>
-                <li><a className='text-lg hover:underline hover:text-[#2c4ac0] pb-2 transition-all ' href="#about">О нас </a></li>
-                <li><a className='text-lg  hover:underline hover:text-[#2c4ac0] pb-2 transition-all' href="#opportunities">Наши возможности</a></li>
-                <li><a className='text-lg  hover:underline hover:text-[#2c4ac0] pb-2 transition-all' href="#globe">Обратная связь</a></li>
-                <li><a className='text-lg  hover:underline hover:text-[#2c4ac0] pb-2 transition-all' href="#contacts">Контакты</a></li>
+              <ul className='lg:flex hidden gap-x-5 text-white text-[18px] font-medium'>
+                <li className='mt-3 mr-2'>
+                    <a href="https://web.archive.org/web/20241007013652/https://kredo.vip/contacts">Войти</a>
+                </li>
+                <button className='bg-[#120b29]  rounded-[10px] h-12 w-[203px] border-2 border-[#292735]'>
+                  <a href="">Зарегистрироваться</a>
+                </button>
+                <li>
+                    <button className='bg-[#120b29]  rounded-[10px] h-11 w-[53px] border-2 border-[#292735]'>
+                          <img src="./tg.svg" alt="" />
+                    </button>
+                </li>
+                
               </ul>
-            </nav>
-          </motion.div>}
+              {!activeMenu ? <HiMenuAlt3 onClick={()=>setActiveMenu(!activeMenu)} className='text-4xl cursor-pointer block lg:hidden text-white'/>:<IoMdClose onClick={()=>setActiveMenu(!activeMenu)} className='text-4xl cursor-pointer block lg:hidden text-white'/>}
+              {
+                activeMenu && <div className={`absolute bg-black text-white z-30 left-0 right-0 transition-all duration-500 ease-in-out transform ${
+                activeMenu ? 'top-[100px] opacity-100 translate-y-0' : 'top-0 opacity-0 -translate-y-10 pointer-events-none'
+              } p-10`}>
+                 <div className='flex flex-col justify-center gap-y-4 text-center mb-10'>
+                       <a href="">Контакты</a> 
+                        <a href="">Блог</a> 
+                        <a href="">Реферальная программа</a> 
+                        <a href="">Мы в Telegram</a> 
+                 </div>
+                 <a href="" className='bg-[#232938] rounded-2xl mb-4 h-10 w-[149px] text-center text-white mx-auto py-2 px-5'>Регистрация</a> <br />
+                 <a href="" className='text-[#181828] rounded-2xl  h-10 w-[104px] text-center bg-white mx-auto py-2 px-5'>Войти</a>
+              </div>
+              }
+            </header>
         </div>
+       {/* Navbar */}
+        {/* Home */}
+       <section className='w-full md:py-24 py-16  bg-black relative'>
+              <div className="flex pl-5 md:pl-[150px]">
+                    <div className='md:w-[60%] w-full' >
+                      <img src="./kredo.svg" className='mb-4' alt="" />
+                      <h2 className='text-white text-3xl md:text-[50px] lg:text-[70px] mb-6 lg:leading-[90px] font-extrabold'>Революционный сервис для передовых P2P решений</h2>
+                      <img className='w-[224px] lg:hidden h-[238px] mb-4' src="./info.jpg" alt="" />
+                      <p className=' text-[18px] md:text-[22px] pr-5 max-w-[600px] text-[#33D2FF]'>
+                         Зарабатывайте на своих умениях вместе с Kredo! 
+                         <span className='text-white'> Мы предоставляем трейдерам выгодные условия для обработки платежей.</span>
+                      </p>
+                      <a href="https://web.archive.org/web/20241004012351/https://dashboard.kredo.vip/login" className='text-[#040112] text-[16px] md:text-[20px] h-14 md:h-[70px] mt-10 bg-[#33D2FF] rounded-2xl w-[230px] md:w-[313px] flex items-center justify-center gap-x-5 font-bold'>
+                         Присоединиться!
+                         <FiArrowRight className='font-bold text-xl'/>
+                      </a>
+                    </div>
+            
+                    <div className="light-bg top-64"></div>
+                    <div className="light-bg hidden lg:block top-40 left-1/2"></div>
+                    <div className="w-[40%] lg:block hidden bg-[url('./bg.png')] h-[500px]  ml-auto">
+                      <img src="./info.jpg" className='h-[400px] w-[400px] ml-32' alt="" />
+                    </div>
+                  </div>
+       </section>
+       <section className='text-center relative w-full py-20 bg-black'>
+            <h3 className='md:text-[36px] text-[24px] text-white font-bold mb-8'>Широкий спектр гео</h3>
+               <AutoScrollImage/>
+             <p className='md:text-[22px] text-[16px] mx-auto max-w-[250px] md:max-w-[650px] mb-40 text-white mt-10'>Мы работаем с различными регионами, включая страны  <span className='font-semibold  text-cyan-400'>СНГ, Индию и Турцию, и продолжаем расширять наши горизонты!</span></p>
+             <div className="light-bg top-60 left-1/2"></div>
+             <div className='container h-[377px] bg-slate-800 py-5 text-center rounded-2xl md:flex items-center gap-x-8'>
+                  <img className='ml-20 mr-10' src="./mayfPay.svg" alt="" />
+                  <img className=" loaded md:h-[90%] rotate-90 md:rotate-0" data-original="https://web.archive.org/web/20241007013022/https://static.tildacdn.net/tild6164-3137-4165-b536-643338326465/Line_8.png" alt="" imgfield="tn_img_1720394766680" src="https://web.archive.org/web/20241007013022im_/https://optim.tildacdn.net/tild6164-3137-4165-b536-643338326465/-/format/webp/Line_8.png"/>
+                  <div className='mx-16'>
+                    <p className='text-[36px] text-white font-extrabold'>Платформа разработана командой финтеха MayfPay</p>
+                    <p className='text-white text-[22px] '>
+                        MayfPay на протяжении более трех лет успешно работает в сфере финтех,
+                        <span className='text-[#9b96ae]'>обладая обширным опытом и глубокими знаниями, что гарантирует высокое качество и надежность предоставляемых решений.</span>
+                    </p>
+                  </div>
+             </div>
 
-        <section id='' className='w-full h-[10vh] min-h-screen'>
-          <div className='flex justify-between max-w-[1300px] px-5 pl-[12%] mx-auto'>
-            <div>
-              <button className='flex gap-2 min-w-[229px] mb-5 items-center py-2 justify-center px-[10px] rounded-md bg-white'>
-                <span class="blinking-dot"></span>
-
-                <p className='text-[#2c4ac0] text-sm'> Набор трейдеров открыт</p>
-              </button>
-              <p className="md:text-[64px] text-[32px] text-white lg:mb-8 mb-4 font-medium lg:tracking-wide lg:leading-[68px] leading-[36px]">
-                Международная <br /> процессинг <br /> платформа
-              </p>
-              <p className="text-white text-[16px] font-normal max-w-[400px]">
-                Наша платформа предлагает лучшие условия работы для новичков и опытных команд в сфере обработки платежного трафика
-              </p>
-            </div>
-            <div></div>
-          </div>
-        </section>
-      </div>
-
-      <section id="about" className='w-full bg-white  pt-20'>
-        <div className=" max-w-[960px] px-5 mx-auto">
-          <h3 className="md:text-[32px] text-2xl mb-3 lg:mb-6 font-bold text-[#2c4ac0]">Что такое Kredo</h3>
-          <div className="mb-16 lg:mb-32">
-            <img className="w-full md:block hidden rounded-[20px] h-[480px] custom-shadow mb-8" src="./tables.avif" alt="" />
-            <div className="w-full ml-auto">
-
-              <p className="text-[16px] font-normal text-[#5A6789]">Kredo – это всемирная универсальная платформа для обработки платежного трафика. Мы предоставляем широкий ассортимент инструментов, созданных для комфорта трейдеров, лучшую автоматику и огромный объем вторичного платежного трафика. Находимся на рынке уже более 2 лет, и настроены дальше создавать лучшие условия для работы трейдеров.</p>
-            </div>
-          </div>
-
-          <h4 className="md:text-[32px] text-2xl mb-3 text-center text-[#2c4ac0]mb-8 lg:mb-12  font-bold text-[#2c4ac0]">Условия для подключения</h4>
-          <div className="flex flex-col md:gap-24 md:flex-row justify-evenly mx-auto lg:max-w-[70%] text-center">
-            <div className="mb-3">
-              <p className="mb-6  md:text-[18px] text-[#5a6789] font-normal ">Количество материала</p>
-              <h4 className="text-[56px] text-start text-2xl text-[#2c4ac0] font-medium"> 4 ЛК+</h4>
-            </div>
-            <div className="mb-3">
-              <p className="mb-6  md:text-[18px] text-[#5a6789] font-normal">Минимальный торговый депозит</p>
-              <h4 className="text-start text-[56px] text-2xl text-[#2c4ac0] font-medium">500 USDT</h4>
-            </div>
-          </div>
-          <div className="mx-auto mt-10  flex flex-col items-center">
-            <p className="mb-6 md:text-[18px] text-[#5a6789] font-normal">Минимальный страховой депозит</p>
-            <h4 className="text-[56px] text-2xl text-[#2c4ac0] font-medium">500 USDT</h4>
-          </div>
-
-        </div>
-      </section>
-
-      <div className="relative w-full overflow-hidden min-h-[300px] mt-20">
-        <div className="md:h-16 h-12 top-20 absolute z-10 w-full p-4 py-3 kredo-rotation-bg  rotate-12 md:rotate-6">
-          <div className="flex space-x-8 mt-2 animate-marquee">
-            {Array(70)
-              .fill("Kredo")
-              .map((text, index) => (
-                <span key={index} className="text-[16px] text-white font-bold">
-                  {text}
-                </span>
-              ))}
-          </div>
-        </div>
-        <div className="md:h-16 h-12 absolute top-20 w-full p-4 py-3  kredo-rotation-bg -rotate-12 md:-rotate-6">
-          <div className="flex space-x-8 mt-2 animate-marquee1">
-            {Array(70)
-              .fill("Kredo")
-              .map((text, index) => (
-                <span key={index} className="text-[16px] text-white font-bold">
-                  {text}
-                </span>
-              ))}
-          </div>
-        </div>
-      </div>
-
-
-      <h4 className="md:text-[32px] text-2xl  text-center text-[#2c4ac0] mb-8 lg:mb-12  font-bold ">В чем наше преимущество?</h4>
-      <div className="max-w-[343px] md:max-w-[700px] lg:max-w-[960px] px-5 mx-auto">
-        <div className="w-full h-[231px] mb-4 rounded-lg bg-gradient-to-r p-5 from-[#459efe] via-[#a9caff] to-[#a1d9ed]">
-          <p className="text-white text-[20px] font-semibold text-xl mb-5">Наилучшая  автоматика</p>
-          <p className="md:w-[40%] w-full text-white text-sm">Продвинутая система автоматической проверки поступления платежей, которая работает быстро и безопасно. Именно это предлагает наша процессинг платформа - наилучшая автоматика для вашей работы.</p>
-        </div>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-4 mb-20">
-          <div className="h-[300px] mb-5 p-5 bg-[#459efe] rounded-md">
-            <p className="text-white font-semibold text-[20px] mb-5">Неограниченный <br />
-              объем трафика</p>
-            <p className="w-[80%] text-sm text-white">Поток платежей-основа вашего
-              заработок. Платформа обработки каннабиса
-              обеспечить стабильный поток
-              транзакционный узел ограниченный по объекту</p>
-          </div>
-          <div className="h-[300px] mb-5 p-5 bg-[#459efe] rounded-md">
-            <p className="text-white text-[20px] font-semibold mb-5">Вторичный <br />
-              платежный трафик</p>
-            <p className="w-[80%] text-sm text-white">Наша процессинг платформа
-              работает исключительно с
-              вторичным платежным трафиком.
-              Благодаря этому, ваш материал
-              работает стабильнее, а прибыль -
-              увеличивается</p>
-          </div>
-          <div className="h-[300px] p-5 bg-[#459efe] rounded-md">
-            <p className="text-white font-semibold text-[20px] mb-5">Высокие <br />
-              комиссии</p>
-            <p className="w-[80%] text-sm text-white">Наша платформа быстро реагирует на
-              тенденции рынка, увеличивая комиссии.
-              Актуальные ставки узнавайте у саппорта</p>
-          </div>
-        </div>
-        <h4 id="opportunities" className="md:text-[32px] text-2xl  text-start text-[#2c4ac0] mb-8 lg:mb-12  font-bold ">Поддерживаемые валюты</h4>
-
-      </div>
-      <div className="carousel-container">
-        <div className="carousel-track">
-          <div className="carousel-item">Kazakhstani Tenge</div>
-          <div className="carousel-item">USD Dollar</div>
-          <div className="carousel-item">Tether</div>
-          <div className="carousel-item">Russian Ruble</div>
-          <div className="carousel-item">Kazakhstani Tenge</div>
-          <div className="carousel-item">Kazakhstani Tenge</div>
-          <div className="carousel-item">USD Dollar</div>
-          <div className="carousel-item">Tether</div>
-          <div className="carousel-item">Russian Ruble</div>
-          <div className="carousel-item">Kazakhstani Tenge</div>
-        </div>
-      </div>
-      <div className=" max-w-[960px] px-5 mx-auto">
-        <h4 className="md:text-[32px] text-2xl text-start mb-8 lg:my-12  my-8 font-bold text-[#2c4ac0]">Наши сильные стороны:</h4>
-        <div className="grid lg:grid-cols-2 gap-y-5 md:grid-cols-2 grid-cols-1 gap-x-6 mb-20">
-          <div className="h-[133px] rounded-[8px] bg-[#fbfcfe] border  border-spacing-1 p-4 border-[#e9e8e8] ">
-            <p className="text-[24px] font-bold text-[#5A6789] mb-3">01</p>
-            <p className="c">Отсутствие
-              «треугольников»</p>
-          </div>
-          <div className="h-[133px] rounded-[8px] bg-[#fbfcfe] border  border-spacing-1 p-4 border-[#e9e8e8] ">
-            <p className="text-[24px] font-bold text-[#5A6789] mb-3">02</p>
-            <p className="text-[20px] font-normal text-[#5A6789] mb-3">Множество доступных
-              географий</p>
-          </div>
-          <div className="h-[133px] rounded-[8px] bg-[#fbfcfe] border  border-spacing-1 p-4 border-[#e9e8e8]">
-            <p className="text-[24px] font-bold text-[#5A6789] mb-3">03</p>
-            <p className="text-[20px] font-normal text-[#5A6789] mb-3">Компенсация за
-              компрометации</p>
-          </div>
-          <div className="h-[133px] rounded-[8px] bg-[#fbfcfe] border  border-spacing-1 p-4 border-[#e9e8e8]">
-            <p className="text-[24px] font-bold text-[#5A6789] mb-3">04</p>
-            <p className="text-[20px] font-normal text-[#5A6789] mb-3">Реферальные кабинеты
-              для агентов</p>
-          </div>
-        </div>
-      </div>
-      <div id="globe" className="bg-globe">
-
-
-        <div className="card">
-          <h4 className="md:text-[32px] text-2xl text-center mb-8 lg:my-12  font-bold text-[#2c4ac0]">География работы</h4>
-        </div>
-        <div className="w-full overflow-hidden my-32 p-4">
-          <div className="flex space-x-8 z-0 animate-marquees">
-            {Array(2)
-              .fill([
-                "Republic of Uzbekistan",
-                "Armenia",
-                "Republic of Belarus",
-                "Turkmenistan",
-                "Republic of Tajikistan",
-                "Armenia",
-                "Russian Federation",
-                "Republic of Kazakhstan",
-                "Kyrgyz Republic",
-              ])
-              .flat()
-              .map((country, index) => (
-                <span key={index} className="text-[16px] text-[#5A6789] font-medium whitespace-nowrap">
-                  {country}
-                </span>
-              ))}
-          </div>
-        </div>
-
-        <div className="max-w-[470px] h-[216px] mb-20 p-4 flex flex-col justify-between rounded-lg mx-auto bg-[#459efe] text-white">
-          <p className="text-[24px] mb-3">Telegram Support</p>
-          <p className="mb-3 text-[16px]">Вы можете задать вопросы о
-            подключении в Telegram</p>
-          <a className="bg-white text-[#459efe] p-3 rounded-lg">Напишите нам</a>
-        </div>
-      </div>
-
-
-      <div className="max-w-[960px] px-5 mx-auto mb-6">
-
-        <div className="w-full h-[1px] mb-6 bg-gray-700"></div>
-        <div className="max-w-[960px] mx-auto">
-          <p className='text-[17px] pb-6 pl-6 logo text-[#2c4ac0] cursor-pointer font-bold'>Kredo</p>
-          <p className="text-[#5a6789]">© Kredo 2024</p>
-          <p className="text-[#5a6789]">For Inquiries email us at <a className="text-xl text-[#2c4ac0] ml-6">connect@trademo.net</a></p>
-          <div className="md:flex sm:block w-full justify-between gap-16 mt-8">
-            <div className="mb-4">
-              <p className="text-[#2c4ac0] text-sm md:text-xl uppercase font-normal mb-6">Navigation</p>
-              <ul className='flex flex-col gap-y-3 text-gray-600 text-[500]'>
-                <li><a href="#about" className='md:text-[20px] text-sm text-[#5A6789] hover:underline hover:text-[#2c4ac0]'>О проекте</a></li>
-                <li><a className='md:text-[20px] text-sm  text-[#5A6789] hover:underline hover:text-[#2c4ac0]' href="#opportunities">Наши возможности</a></li>
-                <li><a className='md:text-[20px] text-sm  text-[#5A6789] hover:underline hover:text-[#2c4ac0]' href="#globe">Обратная связь</a></li>
-                <li><a className='md:text-[20px] text-sm  text-[#5A6789] hover:underline hover:text-[#2c4ac0]' href="">Карта сайта</a></li>
-              </ul>
-            </div>
-            <div id="contacts" className="flex flex-col gap-2.5">
-              <p className="text-[#2c4ac0] md:text-xl text-sm uppercase font-normal mb-2">Contacts</p>
-              <p className="text-[#5a6789] text-md text-xl ">Telegram Поддержка</p>
-              <p className="text-[#5a6789] text-md text-xl ">connect@trademo.net</p>
-              <p className="text-[#5a6789]">ИП Куприянов А.В. ИНН 773178838030</p>
-              <p className="text-[#5a6789]">Телефон для связи +7 996 411 0122</p>
-              <p className="text-[#5a6789]">Пресненская наб., 10, стр. 2, Москва</p>
-            </div>
-          </div>
-        </div>
-      </div>
+             <div className='mt-40'>
+                 <div className='flex items-center justify-center gap-x-10'>
+                      <img class="tn-atom__img t-img loaded w-[114px]" data-original="https://web.archive.org/web/20241007013022/https://static.tildacdn.net/tild3533-6664-4539-b931-613135386434/Group_237825.png" alt="" imgfield="tn_img_1720395273030" src="https://web.archive.org/web/20241007013022im_/https://optim.tildacdn.net/tild3533-6664-4539-b931-613135386434/-/resize/135x/-/format/webp/Group_237825.png"></img>
+                    <p className='text-white uppercase text-[22px] font-semibold'>трейдерам</p>
+                 <img class="tn-atom__img t-img loaded w-[114px]" data-original="https://web.archive.org/web/20241007013022/https://static.tildacdn.net/tild6131-6437-4061-b563-376666303265/Group_237843.png" alt="" imgfield="tn_img_1720395213049" src="https://web.archive.org/web/20241007013022im_/https://optim.tildacdn.net/tild6131-6437-4061-b563-376666303265/-/resize/136x/-/format/webp/Group_237843.png"></img>
+                 </div>
+                 <p className='text-white text-[36px] font-extrabold mt-5'>Преимущества P2P Трейдинга</p>
+             </div>
+       </section>
+       {/* Home */}
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 *{
   margin: 0;
@@ -13,71 +14,27 @@ body {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-.logo{
-  font-family: "Montserrat", sans-serif;
-  letter-spacing: 3px;
-}
 
 
-.valid {
-  color: white;
+.light-bg {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(122,88,255,0.35), transparent 90%);
+  pointer-events: none;
+  filter: blur(100px);
+  z-index: 0;
 }
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-
-.animate-marquee {
-  display: flex;
-  white-space: nowrap;
-  animation: marquee 14s linear infinite;
-}
-@keyframes marquee1 {
-  100% { transform: translateX(100%); }
-  0% { transform: translateX(0); }
-}
-
-.animate-marquee1 {
-  display: flex;
-  white-space: nowrap;
-  animation: marquee 14s linear infinite;
-}
-
-@keyframes marquees {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-marquees {
-  display: flex;
-  white-space: nowrap;
-  animation: marquees 15s linear infinite;
-  width: 200%;
-}
-
-.blinking-dot {
-  width: 16px;
-  height: 16px;
-  background-color: #ff1900;
-  border-radius: 50%;
-  animation: blink 3s infinite ease-in-out;
-}
-
-@keyframes blink {
-  0% {
-    background-color: white;
-    opacity: 1;
+@layer utilities {
+  @keyframes scroll {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
   }
-  50% {
-    background-color: #ff1900;
-    opacity: 0.6;
-  }
-  100% {
-    background-color: white;
-    opacity: 1;
+
+  .animate-scroll {
+    animation: scroll 20s linear infinite;
   }
 }
-
 .carousel-container {
   overflow: hidden;
   white-space: nowrap;
@@ -153,4 +110,11 @@ body {
   height: 721px;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.container{
+  max-width: 1240px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin:  0 auto;
 }
