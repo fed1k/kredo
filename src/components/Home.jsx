@@ -3,6 +3,8 @@ import { FiArrowRight } from "react-icons/fi";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 import AutoScrollImage from './Carusel';
+import { cards } from '../constans';
+import Card from './Card';
 const Home = () => {
   const [activeMenu,setActiveMenu]=useState(false)
   return (
@@ -63,7 +65,7 @@ const Home = () => {
                     <div className='md:w-[60%] w-full' >
                       <img src="./kredo.svg" className='mb-4' alt="" />
                       <h2 className='text-white text-3xl md:text-[50px] lg:text-[70px] mb-6 lg:leading-[90px] font-extrabold'>Революционный сервис для передовых P2P решений</h2>
-                      <img className='w-[224px] lg:hidden h-[238px] mb-4' src="./info.jpg" alt="" />
+                      <img className='w-[224px] lg:hidden h-[288px] mb-4' src="./info.jpg" alt="" />
                       <p className=' text-[18px] md:text-[22px] pr-5 max-w-[600px] text-[#33D2FF]'>
                          Зарабатывайте на своих умениях вместе с Kredo! 
                          <span className='text-white'> Мы предоставляем трейдерам выгодные условия для обработки платежей.</span>
@@ -81,30 +83,39 @@ const Home = () => {
                     </div>
                   </div>
        </section>
-       <section className='text-center relative w-full py-20 bg-black'>
+       <section className='text-center relative  w-full px-5 py-20 bg-black'>
             <h3 className='md:text-[36px] text-[24px] text-white font-bold mb-8'>Широкий спектр гео</h3>
                <AutoScrollImage/>
              <p className='md:text-[22px] text-[16px] mx-auto max-w-[250px] md:max-w-[650px] mb-40 text-white mt-10'>Мы работаем с различными регионами, включая страны  <span className='font-semibold  text-cyan-400'>СНГ, Индию и Турцию, и продолжаем расширять наши горизонты!</span></p>
-             <div className="light-bg top-60 left-1/2"></div>
-             <div className='container h-[377px] bg-slate-800 py-5 text-center rounded-2xl md:flex items-center gap-x-8'>
+             <div className="light-bg top-60 md:left-1/2 h-[300px] md:h-auto"></div>
+             <div className='container  h-auto lg:h-[377px] relative  bg-slate-800 py-5 text-center rounded-2xl md:flex items-center gap-x-8'>
+              <img src="_.png" alt="" className='absolute left-0 -top-20 w-32' />
+              <img src="_(1).png" alt="" className='absolute -right-6 -bottom-10 w-32' />
                   <img className='ml-20 mr-10' src="./mayfPay.svg" alt="" />
-                  <img className=" loaded md:h-[90%] rotate-90 md:rotate-0" data-original="https://web.archive.org/web/20241007013022/https://static.tildacdn.net/tild6164-3137-4165-b536-643338326465/Line_8.png" alt="" imgfield="tn_img_1720394766680" src="https://web.archive.org/web/20241007013022im_/https://optim.tildacdn.net/tild6164-3137-4165-b536-643338326465/-/format/webp/Line_8.png"/>
-                  <div className='mx-16'>
-                    <p className='text-[36px] text-white font-extrabold'>Платформа разработана командой финтеха MayfPay</p>
-                    <p className='text-white text-[22px] '>
+                  <img className=" loaded md:h-[90%] mx-auto lg:block hidden" data-original="https://web.archive.org/web/20241007013022/https://static.tildacdn.net/tild6164-3137-4165-b536-643338326465/Line_8.png" alt="" imgfield="tn_img_1720394766680" src="https://web.archive.org/web/20241007013022im_/https://optim.tildacdn.net/tild6164-3137-4165-b536-643338326465/-/format/webp/Line_8.png"/>
+                  <div className='h-[2px] rounded-3xl bg-white w-full mx-auto md:hidden block my-6'></div>
+                  <div className='md:mx-16 mx-5'>
+                    <p className='md:text-[36px] text-[20px] mb-4 md:mb-0 text-white font-extrabold'>Платформа разработана командой финтеха MayfPay</p>
+                    <p className='text-white text-[16px] md:text-[22px] '>
                         MayfPay на протяжении более трех лет успешно работает в сфере финтех,
                         <span className='text-[#9b96ae]'>обладая обширным опытом и глубокими знаниями, что гарантирует высокое качество и надежность предоставляемых решений.</span>
                     </p>
                   </div>
              </div>
 
-             <div className='mt-40'>
+             <div className='mt-40 relative'>
                  <div className='flex items-center justify-center gap-x-10'>
-                      <img class="tn-atom__img t-img loaded w-[114px]" data-original="https://web.archive.org/web/20241007013022/https://static.tildacdn.net/tild3533-6664-4539-b931-613135386434/Group_237825.png" alt="" imgfield="tn_img_1720395273030" src="https://web.archive.org/web/20241007013022im_/https://optim.tildacdn.net/tild3533-6664-4539-b931-613135386434/-/resize/135x/-/format/webp/Group_237825.png"></img>
-                    <p className='text-white uppercase text-[22px] font-semibold'>трейдерам</p>
-                 <img class="tn-atom__img t-img loaded w-[114px]" data-original="https://web.archive.org/web/20241007013022/https://static.tildacdn.net/tild6131-6437-4061-b563-376666303265/Group_237843.png" alt="" imgfield="tn_img_1720395213049" src="https://web.archive.org/web/20241007013022im_/https://optim.tildacdn.net/tild6131-6437-4061-b563-376666303265/-/resize/136x/-/format/webp/Group_237843.png"></img>
+                      <img className="tn-atom__img t-img loaded w-[114px]" data-original="https://web.archive.org/web/20241007013022/https://static.tildacdn.net/tild3533-6664-4539-b931-613135386434/Group_237825.png" alt="" imgfield="tn_img_1720395273030" src="https://web.archive.org/web/20241007013022im_/https://optim.tildacdn.net/tild3533-6664-4539-b931-613135386434/-/resize/135x/-/format/webp/Group_237825.png"></img>
+                    <p className='text-white uppercase text-md md:text-[22px] font-semibold'>трейдерам</p>
+                 <img className="tn-atom__img t-img loaded w-[114px]" data-original="https://web.archive.org/web/20241007013022/https://static.tildacdn.net/tild6131-6437-4061-b563-376666303265/Group_237843.png" alt="" imgfield="tn_img_1720395213049" src="https://web.archive.org/web/20241007013022im_/https://optim.tildacdn.net/tild6131-6437-4061-b563-376666303265/-/resize/136x/-/format/webp/Group_237843.png"></img>
+                 <div className="light-bg top-64"></div>
                  </div>
-                 <p className='text-white text-[36px] font-extrabold mt-5'>Преимущества P2P Трейдинга</p>
+                 <p className='text-white mb-8 text-[24px] md:text-[36px] font-extrabold mt-5'>Преимущества P2P Трейдинга</p>
+                  <div className='container grid lg:grid-cols-2 gap-4 grid-cols-1'>
+                        {cards && cards.map((card)=>(
+                          <Card key={card.id} card={card}/>
+                        ))}
+                  </div>
              </div>
        </section>
        {/* Home */}
