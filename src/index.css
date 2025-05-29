@@ -25,6 +25,16 @@ body {
   filter: blur(100px);
   z-index: 0;
 }
+.bg-color{
+  background: #000000;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.83) 0%, rgba(2, 34, 54, 1) 3%);
+}
+@media (max-width:500px) {
+  .light-bg{
+    width: 150px;
+    height: 200px;
+  }
+}
 @layer utilities {
   @keyframes scroll {
     0% { transform: translateX(0%); }
