@@ -79,7 +79,7 @@ const Home = () => {
                     <div className="light-bg top-64"></div>
                     <div className="light-bg hidden lg:block top-40 left-1/2"></div>
                     <div className="w-[40%] lg:block hidden bg-[url('./bg.png')] h-[500px]  ml-auto">
-                      <img src="./info.jpg" className='h-[400px] w-[400px] ml-32' alt="" />
+                      <img src="./info.jpg" className='h-[400px] w-[300px] ml-32' alt="" />
                     </div>
                   </div>
        </section>
@@ -111,13 +111,35 @@ const Home = () => {
                  <div className="light-bg top-64"></div>
                  </div>
                  <p className='text-white mb-8 text-[24px] md:text-[36px] font-extrabold mt-5'>Преимущества P2P Трейдинга</p>
-                  <div className='container grid lg:grid-cols-2 gap-4 grid-cols-1'>
+                  <div className='container grid lg:grid-cols-2 gap-x-4 gap-y-5 lg:gap-y-10 grid-cols-1'>
                         {cards && cards.map((card)=>(
-                          <Card key={card.id} card={card}/>
+                          // <Card key={card.id} card={card}/>
+                          <div className='text-white md:p-8 p-4 rounded-2xl relative bg-slate-900'>
+                              <div className='flex flex-col-reverse  lg:flex-row w-full items-center justify-between mb-5'>
+                                   <p className='lg:text-[24px] text-[18px] font-bold w-full lg:w-[60%] lg:text-start text-center mt-4 lg:mt-0'>{card.title}</p>
+                                   {card.img && <img src={card.img} alt="" />}
+                                   {card.bigImg && <img className='w-20 h-20 lg:w-40 lg:h-40 lg:absolute lg:-top-10 lg:right-0' src={card.bigImg} alt="" />}
+                              </div>
+                              <p className='md:text-[18px] text-[#9B96AE] text-sm text-center lg:text-start'>{card.subtitle}</p>
+                          </div>
                         ))}
                   </div>
              </div>
+              <div className='mt-40'>
+                 <div className='flex items-center justify-center gap-x-10'>
+                      <img className="tn-atom__img t-img loaded w-[114px]" data-original="https://web.archive.org/web/20241007013022/https://static.tildacdn.net/tild3533-6664-4539-b931-613135386434/Group_237825.png" alt="" imgfield="tn_img_1720395273030" src="https://web.archive.org/web/20241007013022im_/https://optim.tildacdn.net/tild3533-6664-4539-b931-613135386434/-/resize/135x/-/format/webp/Group_237825.png"></img>
+                    <p className='text-white uppercase text-md md:text-[22px] font-semibold'>как начать</p>
+                 <img className="tn-atom__img t-img loaded w-[114px]" data-original="https://web.archive.org/web/20241007013022/https://static.tildacdn.net/tild6131-6437-4061-b563-376666303265/Group_237843.png" alt="" imgfield="tn_img_1720395213049" src="https://web.archive.org/web/20241007013022im_/https://optim.tildacdn.net/tild6131-6437-4061-b563-376666303265/-/resize/136x/-/format/webp/Group_237843.png"></img>
+                 <div className="light-bg top-64"></div>
+                 </div>
+                 <p className='text-white mb-8 text-[24px] md:text-[36px] font-extrabold mt-5'>Как зарабатывать с нами?</p>
+                 <div>
+                   
+                 </div>
+             </div>
        </section>
+
+       
        {/* Home */}
     </div>
   )
