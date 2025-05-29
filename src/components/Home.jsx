@@ -1,16 +1,30 @@
-import React, { useState } from 'react'
-import { FiArrowRight } from "react-icons/fi";
+import React, { useEffect, useState } from 'react'
+
 import { HiMenuAlt3 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 import AutoScrollImage from './Carusel';
-import { cards } from '../constans';
-import Card from './Card';
+import { cards, titles } from '../constans';
+import { RxDoubleArrowLeft } from "react-icons/rx";
+import Hime from './Hime';
 const Home = () => {
   const [activeMenu,setActiveMenu]=useState(false)
+  useEffect(() => {
+  if (activeMenu) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+}, [activeMenu]);
   return (
     <div>
        {/* Navbar */}
-        <div className='bg-black  w-full border-b-2 border-[#fff]'>
+        <div className='bg-black fixed left-0 right-0 top-0 z-50 w-full border-b-2 border-[#fff]'>
+                  {activeMenu && (
+                <div
+                  className="fixed inset-0 bg-black bg-opacity-40 z-30"
+                  onClick={() => setActiveMenu(!activeMenu)}
+                />
+              )}
               <header className='container flex items-center justify-between py-4 md:py-7'>
               <a  href="/web/20241007013022/https://kredo.vip/">
                 <img className='md:h-auto h-14' src="./logo.svg" alt="" />
@@ -46,43 +60,22 @@ const Home = () => {
                 activeMenu && <div className={`absolute bg-black text-white z-30 left-0 right-0 transition-all duration-500 ease-in-out transform ${
                 activeMenu ? 'top-[100px] opacity-100 translate-y-0' : 'top-0 opacity-0 -translate-y-10 pointer-events-none'
               } p-10`}>
-                 <div className='flex flex-col justify-center gap-y-4 text-center mb-10'>
-                       <a href="">Контакты</a> 
-                        <a href="">Блог</a> 
-                        <a href="">Реферальная программа</a> 
-                        <a href="">Мы в Telegram</a> 
+                 <div className='flex flex-col justify-center gap-y-3 text-center mb-6'>
+                       <a onClick={()=>setActiveMenu(!activeMenu)} href="">Контакты</a> 
+                        <a onClick={()=>setActiveMenu(!activeMenu)} href="">Блог</a> 
+                        <a onClick={()=>setActiveMenu(!activeMenu)} href="">Реферальная программа</a> 
+                        <a onClick={()=>setActiveMenu(!activeMenu)} href="">Мы в Telegram</a> 
                  </div>
-                 <a href="" className='bg-[#232938] rounded-2xl mb-4 h-10 w-[149px] text-center text-white mx-auto py-2 px-5'>Регистрация</a> <br />
-                 <a href="" className='text-[#181828] rounded-2xl  h-10 w-[104px] text-center bg-white mx-auto py-2 px-5'>Войти</a>
+                 <a href="" onClick={()=>setActiveMenu(!activeMenu)} className='bg-[#232938] rounded-2xl mx-auto h-10 w-[149px] text-center text-white flex justify-center py-2 px-4 md:px-5'>Регистрация</a> <br />
+                 <a href="" onClick={()=>setActiveMenu(!activeMenu)} className='text-[#181828] rounded-2xl  h-10 w-[104px] text-center bg-white mx-auto flex justify-center py-2 px-4 md:px-5'>Войти</a>
               </div>
               }
             </header>
+             
         </div>
        {/* Navbar */}
         {/* Home */}
-       <section className='w-full md:py-24 py-16  bg-black relative'>
-              <div className="flex pl-5 md:pl-[150px]">
-                    <div className='md:w-[60%] w-full' >
-                      <img src="./kredo.svg" className='mb-4' alt="" />
-                      <h2 className='text-white text-3xl md:text-[50px] lg:text-[70px] mb-6 lg:leading-[90px] font-extrabold'>Революционный сервис для передовых P2P решений</h2>
-                      <img className='w-[224px] lg:hidden h-[288px] mb-4' src="./info.jpg" alt="" />
-                      <p className=' text-[18px] md:text-[22px] pr-5 max-w-[600px] text-[#33D2FF]'>
-                         Зарабатывайте на своих умениях вместе с Kredo! 
-                         <span className='text-white'> Мы предоставляем трейдерам выгодные условия для обработки платежей.</span>
-                      </p>
-                      <a href="https://web.archive.org/web/20241004012351/https://dashboard.kredo.vip/login" className='text-[#040112] text-[16px] md:text-[20px] h-14 md:h-[70px] mt-10 bg-[#33D2FF] rounded-2xl w-[230px] md:w-[313px] flex items-center justify-center gap-x-5 font-bold'>
-                         Присоединиться!
-                         <FiArrowRight className='font-bold text-xl'/>
-                      </a>
-                    </div>
-            
-                    <div className="light-bg top-64"></div>
-                    <div className="light-bg hidden lg:block top-40 left-1/2"></div>
-                    <div className="w-[40%] lg:block hidden bg-[url('./bg.png')] h-[500px]  ml-auto">
-                      <img src="./info.jpg" className='h-[400px] w-[300px] ml-32' alt="" />
-                    </div>
-                  </div>
-       </section>
+       <Hime/>
        <section className='text-center relative  w-full px-5 py-20 bg-black'>
             <h3 className='md:text-[36px] text-[24px] text-white font-bold mb-8'>Широкий спектр гео</h3>
                <AutoScrollImage/>
@@ -103,7 +96,7 @@ const Home = () => {
                   </div>
              </div>
 
-             <div className='mt-40 relative'>
+             <div className='my-40 relative'>
                  <div className='flex items-center justify-center gap-x-10'>
                       <img className="tn-atom__img t-img loaded w-[114px]" data-original="https://web.archive.org/web/20241007013022/https://static.tildacdn.net/tild3533-6664-4539-b931-613135386434/Group_237825.png" alt="" imgfield="tn_img_1720395273030" src="https://web.archive.org/web/20241007013022im_/https://optim.tildacdn.net/tild3533-6664-4539-b931-613135386434/-/resize/135x/-/format/webp/Group_237825.png"></img>
                     <p className='text-white uppercase text-md md:text-[22px] font-semibold'>трейдерам</p>
@@ -125,7 +118,7 @@ const Home = () => {
                         ))}
                   </div>
              </div>
-              <div className='mt-40'>
+              <div className='container'>
                  <div className='flex items-center justify-center gap-x-10'>
                       <img className="tn-atom__img t-img loaded w-[114px]" data-original="https://web.archive.org/web/20241007013022/https://static.tildacdn.net/tild3533-6664-4539-b931-613135386434/Group_237825.png" alt="" imgfield="tn_img_1720395273030" src="https://web.archive.org/web/20241007013022im_/https://optim.tildacdn.net/tild3533-6664-4539-b931-613135386434/-/resize/135x/-/format/webp/Group_237825.png"></img>
                     <p className='text-white uppercase text-md md:text-[22px] font-semibold'>как начать</p>
@@ -133,8 +126,19 @@ const Home = () => {
                  <div className="light-bg top-64"></div>
                  </div>
                  <p className='text-white mb-8 text-[24px] md:text-[36px] font-extrabold mt-5'>Как зарабатывать с нами?</p>
-                 <div>
-                   
+                 <div className='lg:flex items-center justify-between'>
+                    <img  className='lg:block hidden' src="./chess.jpg" alt="" />
+                    <div>
+                        {titles.map((title)=>(
+                          <div className='max-w-[500px] mb-7' key={title.id}>
+                               <p className='flex text-white items-center gap-x-2 mb-8'>
+                                  <span className='text-[22px] text-center font-semibold'>{title.number}</span>
+                                  <RxDoubleArrowLeft className='text-cyan-400 hidden lg:block text-2xl'/>
+                               </p>
+                               <p className='md:text-[22px] text-[16px] text-center lg:text-start font-medium text-white'>{title.title}</p>
+                          </div>
+                        ))}
+                    </div>
                  </div>
              </div>
        </section>
