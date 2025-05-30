@@ -1,6 +1,6 @@
 import React from 'react'
 import { FiArrowRight } from "react-icons/fi";
-const Hime = () => {
+const Main = () => {
   return (
     <section className='w-full md:pt-48 pt-36  bg-black relative'>
               <div className="flex pl-5 md:pl-[150px]">
@@ -28,4 +28,4 @@ const Hime = () => {
   )
 }
 
-export default Hime
+export default Main

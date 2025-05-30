@@ -6,7 +6,7 @@ import { IoMdClose } from "react-icons/io";
 import AutoScrollImage from './Carusel';
 import { cards, titles } from '../constans';
 import { RxDoubleArrowLeft } from "react-icons/rx";
-import Hime from './Hime';
+import Main from './Main';
 const Home = () => {
   const [activeMenu,setActiveMenu]=useState(false)
   useEffect(() => {
@@ -76,7 +76,7 @@ const Home = () => {
         </div>
        {/* Navbar */}
         {/* Home */}
-       <Hime/>
+       <Main/>
        <section className='text-center relative  w-full px-5 pt-20 bg-black'>
             <h3 className='md:text-[36px] text-[24px] text-white font-bold mb-8'>Широкий спектр гео</h3>
                <AutoScrollImage/>
@@ -107,7 +107,7 @@ const Home = () => {
                  <p className='text-white mb-8 text-[24px] md:text-[36px] font-extrabold mt-5'>Преимущества P2P Трейдинга</p>
                   <div className='container grid lg:grid-cols-2 gap-x-4 gap-y-5 lg:gap-y-10 grid-cols-1'>
                         {cards && cards.map((card)=>(
-                          // <Card key={card.id} card={card}/>
+                    
                           <div key={card.id} className='text-white md:p-8 p-4 rounded-2xl relative bg-slate-900'>
                               <div className='flex flex-col-reverse  lg:flex-row w-full items-center justify-between mb-5'>
                                    <p className='lg:text-[24px] text-[18px] font-bold w-full lg:w-[60%] lg:text-start text-center mt-4 lg:mt-0'>{card.title}</p>
@@ -124,16 +124,17 @@ const Home = () => {
                       <img className="tn-atom__img t-img loaded w-[114px]" data-original="https://web.archive.org/web/20241007013022/https://static.tildacdn.net/tild3533-6664-4539-b931-613135386434/Group_237825.png" alt="" imgfield="tn_img_1720395273030" src="https://web.archive.org/web/20241007013022im_/https://optim.tildacdn.net/tild3533-6664-4539-b931-613135386434/-/resize/135x/-/format/webp/Group_237825.png"></img>
                     <p className='text-white uppercase text-md md:text-[22px] font-semibold'>как начать</p>
                  <img className="tn-atom__img t-img loaded w-[114px]" data-original="https://web.archive.org/web/20241007013022/https://static.tildacdn.net/tild6131-6437-4061-b563-376666303265/Group_237843.png" alt="" imgfield="tn_img_1720395213049" src="https://web.archive.org/web/20241007013022im_/https://optim.tildacdn.net/tild6131-6437-4061-b563-376666303265/-/resize/136x/-/format/webp/Group_237843.png"></img>
-                 <div className="light-bg top-64"></div>
+                 <div className="light-bg top-[200px]"></div>
                  </div>
                  <p className='text-white mb-8 text-[24px] md:text-[36px] font-extrabold mt-5'>Как зарабатывать с нами?</p>
-                 <div className='lg:flex items-center justify-between'>
+                 <div className='lg:flex items-center relative justify-between'>
+                   <div className="light-bg top-[200px] left-[20%]"></div>
                     <img  className='lg:block hidden' src="./chess.jpg" alt="" />
                     <div>
                         {titles.map((title,index)=>(
                           <div className='max-w-[500px] mb-7' key={title.id}>
-                               <p className='flex text-white items-center gap-x-2 mb-8'>
-                                  <span className='text-[22px] mx-auto font-semibold'>{title.number}</span>
+                               <p className='flex text-white items-center gap-x-3 mb-8'>
+                                  <span className='text-[22px] mx-auto lg:mx-0 font-semibold'>{title.number}</span>
                                   <RxDoubleArrowLeft className='text-cyan-400 hidden lg:block text-2xl'/>
                                </p>
                                <p className='md:text-[22px] text-[16px] text-center lg:text-start font-medium text-white'>{title.title}</p>
@@ -146,8 +147,9 @@ const Home = () => {
                  </div>
              </div>
 
-             <div className="container lg:flex block justify-between w-full gap-x-20 py-28">
+             <div className="container lg:flex block relative justify-between w-full gap-x-20 py-28">
                   <div className='w-full lg:w-[50%]'>
+
                        <div className='flex items-center justify-start mb-5 gap-x-4'>
                             <p className='text-white uppercase text-md md:text-[22px] font-semibold'>присоединиться</p>
                             <img className="tn-atom__img t-img loaded w-[114px]" data-original="https://web.archive.org/web/20241007013022/https://static.tildacdn.net/tild6131-6437-4061-b563-376666303265/Group_237843.png" alt="" imgfield="tn_img_1720395213049" src="https://web.archive.org/web/20241007013022im_/https://optim.tildacdn.net/tild6131-6437-4061-b563-376666303265/-/resize/136x/-/format/webp/Group_237843.png"></img>
@@ -158,6 +160,7 @@ const Home = () => {
 
                       <img className='mt-6 lg:block hidden' src="./image.png" alt="" />
                   </div>
+                   <div className="light-bg top-[200px] left-[20%]"></div>
                   <form className='w-full lg:w-[50%] flex flex-col gap-y-6'>
                       <label className='w-full text-start mt-6'>
                         <span className='text-white text-[16px] md:text-[18px]'>Как к Вам обращаться*</span> <br />
@@ -180,13 +183,14 @@ const Home = () => {
                                                     Отправить заявку
                             </a>
                          </button> 
+                         <div className="light-bg bottom-[50px] left-[40%]"></div>
                         <p className='text-[15px] font-medium text-start text-white'>Отправляя заявку в Kredo, Вы принимаете <span className='text-[#33D2FF]'>Публичную оферту</span> <br className='lg:block hidden' />и соглашаетесь с <span className='text-[#33D2FF]'>Политикой конфиденциальности</span></p>
                   </form>
                   
              </div>
        </section>
         
-        <footer className='bg-black pb-10'>
+        <footer className='bg-black pb-16'>
            <div className='container h-[1px] bg-slate-800 w-full mb-5'></div> 
            <div className='w-full lg:flex block container justify-between pt-5 items-center'>
             <p className='text-white font-semibold text-xl md:text-[29px]'>Kredo</p>
@@ -200,7 +204,7 @@ const Home = () => {
             </div>
            </div>
 
-           <div className='container w-full grid grid-cols-2 lg:grid-cols-4 items-center gap-x-4 pt-8'>
+           <div className='container w-full grid grid-cols-2 lg:grid-cols-4 items-center gap-x-4 pt-12'>
               <a className='text-[#9B96AE] font-bold text-sm md:text-[18px]' href="">Мы в Telegram</a>
               <a className='text-[#9B96AE] font-bold text-sm md:text-[18px]' href="">Публичная оферта</a>
               <a className='text-[#9B96AE] font-bold text-sm md:text-[18px]' href="">Политика конфиденциальности</a>
