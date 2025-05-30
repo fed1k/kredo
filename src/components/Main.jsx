@@ -1,10 +1,12 @@
 import React from "react";
 import { FiArrowRight } from "react-icons/fi";
+
 const Main = () => {
   return (
-    <section className="w-full md:pt-48 pt-36  bg-black relative">
-      <div className="flex pl-5 md:pl-[150px]">
-        <div className="md:w-[60%] w-full">
+    <section className="w-full md:pt-52 pt-36 bg-black relative">
+      <div className="flex pl-5 md:pl-[150px] relative">
+        {/* Left content */}
+        <div className="md:w-[60%] w-full z-10">
           <img src="./kredo.svg" className="mb-4" alt="" />
           <h2 className="text-white text-3xl md:text-[50px] lg:text-[70px] mb-6 lg:leading-[90px] font-bold">
             Революционный сервис для передовых P2P решений
@@ -14,7 +16,7 @@ const Main = () => {
             src="./info.jpg"
             alt=""
           />
-          <p className=" text-[18px] md:text-[22px] pr-5 max-w-[600px] text-[#33D2FF]">
+          <p className="text-[18px] md:text-[22px] pr-5 max-w-[600px] text-[#33D2FF]">
             Зарабатывайте на своих умениях вместе с Kredo!
             <span className="text-white">
               {" "}
@@ -31,9 +33,11 @@ const Main = () => {
           </a>
         </div>
 
-        <div className="light-bg top-64"></div>
-        <div className="light-bg hidden lg:block top-40 left-1/2"></div>
-        <div className="w-[60%] lg:block relative hidden bg-[url('./bg.png')] h-[500px]  ml-auto">
+        {/* Right background with images */}
+        <div className="hidden md:block w-[50%] h-full absolute top-0 right-0 bg-[url('./bg.png')] bg-cover bg-right"></div>
+
+        {/* Coin and card images */}
+        <div className="w-[40%] lg:block relative hidden h-[500px] ml-auto z-10">
           <img
             src="/coin.png"
             className="absolute z-10 bottom-0 w-32 h-32 coin-animate"
@@ -46,6 +50,10 @@ const Main = () => {
           />
         </div>
       </div>
+
+      {/* Light overlays */}
+      <div className="light-bg top-64"></div>
+      <div className="light-bg hidden lg:block top-40 left-1/2"></div>
     </section>
   );
 };

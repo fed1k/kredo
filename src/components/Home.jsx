@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <div>
        {/* Navbar */}
-        <div className='bg-black fixed left-0 right-0 top-0 z-50 w-full border-b-2 border-[#fff]'>
+        <div className='bg-[#040112] fixed left-0 right-0 top-0 z-50 w-full border-b-2 border-[#fff]'>
                   {activeMenu && (
                 <div
                   className="fixed inset-0 bg-black bg-opacity-40 z-30"
@@ -83,7 +83,7 @@ const Home = () => {
              <p className='md:text-[22px] text-[16px] mx-auto max-w-[250px] md:max-w-[650px] mb-40 text-white mt-10'>Мы работаем с различными регионами, включая страны  <span className='font-semibold  text-cyan-400'>СНГ, Индию и Турцию, и продолжаем расширять наши горизонты!</span></p>
              <div className="light-bg top-60 md:left-1/2 h-[300px] md:h-auto"></div>
              <div className='container  h-auto lg:h-[377px] relative  bg-slate-800 py-5 text-center rounded-2xl md:flex items-center gap-x-8'>
-              <img src="_.png" alt="" className='absolute left-0 -top-20 w-32' />
+              <img src="_.png" alt="" className='absolute -left-20 -top-20 w-60' />
               <img src="_(1).png" alt="" className='absolute -right-6 -bottom-10 w-32' />
                   <img className='ml-20 mr-10' src="./img.svg" alt="" />
                   <img className=" loaded md:h-[90%] mx-auto lg:block hidden" data-original="https://web.archive.org/web/20241007013022/https://static.tildacdn.net/tild6164-3137-4165-b536-643338326465/Line_8.png" alt="" imgfield="tn_img_1720394766680" src="https://web.archive.org/web/20241007013022im_/https://optim.tildacdn.net/tild6164-3137-4165-b536-643338326465/-/format/webp/Line_8.png"/>
@@ -128,8 +128,9 @@ const Home = () => {
                  </div>
                  <p className='text-white mb-8 text-[24px] md:text-[36px] font-extrabold mt-5'>Как зарабатывать с нами?</p>
                  <div className='lg:flex items-center relative justify-between'>
-                   <div className="light-bg top-[200px] left-[20%]"></div>
-                    <img  className='lg:block hidden' src="./chess.jpg" alt="" />
+                   <div className="light-bg relative top-[200px] left-[20%]"></div>
+                    <img className='absolute w-[40%] left-0 top-0' src="./blue_target.png" alt="" />
+                    <img  className='lg:block hidden w-[30%]' src="./blue_chess.png" alt="" />
                     <div>
                         {titles.map((title,index)=>(
                           <div className='max-w-[500px] mb-7' key={title.id}>
