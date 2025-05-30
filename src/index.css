@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 
 @tailwind base;
@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 body {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 *{
   margin: 0;
@@ -127,4 +127,24 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   margin:  0 auto;
+}
+
+.coin-animate {
+  animation: coin alternate infinite 2.4s;
+}
+
+.big-card-animation {
+  animation: card alternate infinite 5s;
+}
+
+@keyframes card {
+  to {
+    transform: rotate(4deg) scale(1.05);
+  }
+}
+
+@keyframes coin {
+  to {
+    scale: 1.1;
+  }
 }
