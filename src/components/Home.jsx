@@ -27,9 +27,7 @@ const Home = () => {
                 />
               )}
               <header className='container flex items-center justify-between py-4 md:py-7'>
-              <a  href="/web/20241007013022/https://kredo.vip/">
-                <img className='md:h-auto h-14' src="./logo.svg" alt="" />
-              </a>
+              <p className='text-white text-4xl logo'>Kredo</p>
               <ul className='lg:flex hidden items-center gap-x-7 text-white text-[18px] font-medium'>
                 <li>
                     <a href="https://web.archive.org/web/20241007013652/https://kredo.vip/contacts">Контакты</a>
@@ -111,7 +109,7 @@ const Home = () => {
                           <div key={card.id} className='text-white md:p-8 p-4 rounded-2xl relative bg-slate-900'>
                               <div className='flex flex-col-reverse  lg:flex-row w-full items-center justify-between mb-5'>
                                    <p className='lg:text-[24px] text-[18px] font-bold w-full lg:w-[60%] lg:text-start text-center mt-4 lg:mt-0'>{card.title}</p>
-                                   {card.img && <img src={card.img} alt="" />}
+                                   {card.img && <img src={card.img} className='w-[60px] h-[60px]' alt="" />}
                                    {card.bigImg && <img className='w-20 h-20 lg:w-40 lg:h-40 lg:absolute lg:-top-10 lg:right-0' src={card.bigImg} alt="" />}
                               </div>
                               <p className='md:text-[18px] text-[#9B96AE] text-sm text-center lg:text-start'>{card.subtitle}</p>
