@@ -4,7 +4,7 @@ const AutoScrollImage = () => {
   const imageUrl = "./group.svg";
 
   return (
-    <div className="relative w-full overflow-hidden h-[20px]">
+    <div className="relative w-full overflow-hidden  h-[20px]">
       <style>
         {`
           @keyframes scrollX {
