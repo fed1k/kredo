@@ -131,10 +131,14 @@ const Home = () => {
                  </div>
                  <p className='text-white mb-8 text-[24px] md:text-[36px] font-extrabold mt-5'>Как зарабатывать с нами?</p>
                  <div className='lg:flex items-center relative justify-between'>
-                   <div className="light-bg relative top-[200px] left-[20%]"></div>
-                    <img className='absolute w-[40%] lg:block hidden left-0 top-0' src="./blue_target.png" alt="" />
-                    <img  className='lg:block hidden w-[30%]' src="./blue_chess.png" alt="" />
-                    <div>
+                   <div className='w-[40%] relative'>
+                        <div className="light-bg relative top-[200px] left-[20%]"></div>
+                        <img className='absolute w-[340px] lg:block hidden left-0 -top-60' src="./blue_target.png" alt="" />
+                        <img src="./coin.png" className='absolute w-[110px] lg:block hidden bottom-0 right-0' alt="" />
+                        <img src="./coin.png" className='absolute w-[120px] lg:block hidden  top-20 left-0 rotate-90' alt="" />
+                        <img  className='lg:block hidden absolute w-[284px]  top-20 right-0' src="./blue_chess.png" alt="" />
+                   </div>
+                    <div className='md:w-[50%] w-full left-auto'>
                         {titles.map((title,index)=>(
                           <div className='max-w-[500px] mb-7 relative' key={title.id}>
                             {index!==0 && <img src='./coin.png' className={`w-[110px] lg:hidden absolute ${index==1 ? '-top-20':'-top-16 left-52 rotate-90'}`}/>}
