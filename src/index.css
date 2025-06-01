@@ -134,7 +134,7 @@ body {
 }
 
 .big-card-animation {
-  animation: card alternate infinite 5s;
+  animation: card alternate infinite 4s;
 }
 
 @keyframes card {
@@ -151,4 +151,14 @@ body {
 
 .logo {
   font-family: 'Nunito Sans';
+}
+
+.animate-up {
+  animation: up infinite alternate 2.6s;
+}
+
+@keyframes up {
+  to {
+    transform: translateY(-16px);
+  }
 }

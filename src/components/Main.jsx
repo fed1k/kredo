@@ -13,7 +13,7 @@ const Main = () => {
           </h2>
           <img
             className="w-[224px] lg:hidden h-[288px] mb-4"
-            src="./info.jpg"
+            src="./info.png"
             alt=""
           />
           <p className="text-[18px] md:text-[22px] pr-5 max-w-[600px] text-[#33D2FF]">
