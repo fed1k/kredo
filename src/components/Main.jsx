@@ -25,7 +25,9 @@ const Main = () => {
             </span>
           </p>
           <a
-            href="https://web.archive.org/web/20241004012351/https://dashboard.kredo.vip/login"
+            href="https://t.me/KredoSupport"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-[#040112] text-[16px] md:text-[20px] h-14 md:h-[70px] mt-10 bg-[#33D2FF] rounded-2xl w-[230px] md:w-[263px] flex items-center justify-center gap-x-5 font-bold"
           >
             Присоединиться!

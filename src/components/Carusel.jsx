@@ -18,7 +18,7 @@ const AutoScrollImage = () => {
         className="flex"
         style={{
           width: "200%",
-          animation: "scrollX 8s linear infinite"
+          animation: "scrollX 14s linear infinite"
         }}
       >
         <img

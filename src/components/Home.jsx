@@ -35,7 +35,7 @@ const Home = () => {
             className="absolute -right-8 lg:left-[17%] w-[144px] lg:w-[220px] -bottom-[104px] md:-bottom-24"
           />
           {/* <img className="md:ml-20 md:mr-10 bg-transparent" src="./trans.png" alt="" /> */}
-          <p className="md:ml-20 md:mr-10 text-white text-4xl">Kredo</p>
+          <p className="md:ml-20 md:mr-10 arista-font text-white text-5xl">Kredo</p>
           <img
             className=" loaded md:h-[90%] mx-auto lg:block hidden"
             data-original="https://web.archive.org/web/20241007013022/https://static.tildacdn.net/tild6164-3137-4165-b536-643338326465/Line_8.png"
@@ -50,9 +50,9 @@ const Home = () => {
             </p>
             <p className="text-white text-[16px] md:text-[22px] ">
               Kredo на протяжении более трех лет успешно работает в сфере
-              финтех,
+              финтех
               <span className="text-[#9b96ae]">
-                обладая обширным опытом и глубокими знаниями, что гарантирует
+                , обладая обширным опытом и глубокими знаниями, что гарантирует
                 высокое качество и надежность предоставляемых решений.
               </span>
             </p>
@@ -310,14 +310,6 @@ const Home = () => {
               </a>
             </div>
             <div className="light-bg bottom-[50px] left-[40%]"></div>
-            <p className="text-[15px] font-medium text-start text-white">
-              Отправляя заявку в Kredo, Вы принимаете{" "}
-              <span className="text-[#33D2FF]">Публичную оферту</span>{" "}
-              <br className="lg:block hidden" />и соглашаетесь с{" "}
-              <span className="text-[#33D2FF]">
-                Политикой конфиденциальности
-              </span>
-            </p>
           </form>
         </div>
       </section>
