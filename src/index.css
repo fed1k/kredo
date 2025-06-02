@@ -43,6 +43,7 @@ body {
 
   .animate-scroll {
     animation: scroll 20s linear infinite;
+    background-color: #090818;
   }
 }
 .carousel-container {
