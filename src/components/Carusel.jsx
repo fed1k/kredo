@@ -4,7 +4,7 @@ const AutoScrollImage = () => {
   const imageUrl = "./group.svg";
 
   return (
-    <div className="relative w-full overflow-hidden  h-[20px]">
+    <div className="relative w-full overflow-hidden h-[20px]">
       <style>
         {`
           @keyframes scrollX {
@@ -24,12 +24,12 @@ const AutoScrollImage = () => {
         <img
           src={imageUrl}
           alt="scrolling"
-          className="w-full h-[20px] object-cover"
+          className="w-1/2 h-[20px] object-cover"
         />
         <img
           src={imageUrl}
           alt="scrolling-duplicate"
-          className="w-full h-[400px] object-cover"
+          className="w-1/2 h-[20px] object-cover"
         />
       </div>
     </div>
