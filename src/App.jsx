@@ -2,7 +2,7 @@ import React from 'react'
 import Home from './components/Home'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import MainLayout from './layout/MainLayout'
-import Contact from './pages/Contact'
+import {Contact,Program} from './pages/index'
 const App = () => {
   const route=createBrowserRouter([
     {
@@ -16,6 +16,10 @@ const App = () => {
         {
           path:'/contact',
           element:<Contact/>
+        },
+        {
+           path:'/affilate-program',
+           element:<Program/>
         }
       ]
     }

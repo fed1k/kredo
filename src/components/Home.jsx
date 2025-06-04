@@ -180,6 +180,7 @@ const Home = () => {
                       {title.number}
                     </span>
                     <RxDoubleArrowLeft className="text-cyan-400 hidden lg:block text-2xl" />
+                    
                   </p>
                   <p className="md:text-[22px] text-[16px] text-center lg:text-start font-medium text-white">
                     {title.title}

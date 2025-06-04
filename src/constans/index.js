@@ -60,3 +60,28 @@ export const titles=[
     title:'Приступайте к работе и получайте прибыль! Нуждаетесь в помощи? У нас свободный доступ к базе знаний, и каждому трейдеру прикреплен личный менеджер.'
   },
 ]
+
+export const programCards=[
+  {
+    id:1,
+    title:'Расскажите ',
+    subtitle:'своим коллегам и друзьям о нашем сервисе.',
+    numberImg:'https://web.archive.org/web/20250604030831/https://optim.tildacdn.net/tild3031-6262-4562-b032-366263303535/-/cover/301x362/center/center/-/format/webp/d79134c7-78b4-4b7e-8.png',
+    image:'https://web.archive.org/web/20250604061727im_/https://optim.tildacdn.net/tild3938-6535-4932-a461-613966366162/-/resize/242x/-/format/webp/svg.png'
+  },
+  {
+    id:2,
+    title:'Пригласите ',
+    subtitle:'их зарегистрироваться на нашей плафторме и начать работать всесте с нами.',
+    numberImg:'https://web.archive.org/web/20250604030846/https://optim.tildacdn.net/tild6639-3066-4332-b232-616662633039/-/cover/444x444/center/center/-/format/webp/beff87ea-8753-4260-9.png',
+    image:'https://web.archive.org/web/20240805005451im_/https://optim.tildacdn.net/tild3037-6361-4566-b661-323264613239/-/resize/178x/-/format/webp/svg-1.png  '
+  },
+  {
+    id:3,
+    title:'Получайте комиссионные от всех успешных сделок ',
+    subtitle:',которые совершат приглашённые вами пользователи на нашей платформе.',
+    numberImg:'https://web.archive.org/web/20240805005451/https://optim.tildacdn.net/tild3065-3835-4238-a166-653665633637/-/cover/316x316/center/center/-/format/webp/c7fd713a-35e4-4e35-9.png',
+    image:'https://web.archive.org/web/20250604061727im_/https://optim.tildacdn.net/tild3832-3965-4930-a561-633565643831/-/resize/206x/-/format/webp/svg-2.png'
+  },
+
+]

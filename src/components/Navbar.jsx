@@ -30,9 +30,9 @@ const Navbar = () => {
                       </NavLink>
                     </li>
                     <li>
-                      <a href="">
+                      <NavLink to={'/affilate-program'}>
                         Реферальная программа
-                      </a>
+                      </NavLink>
                     </li>
                   </ul>
                   <ul className="lg:flex hidden gap-x-5 text-white text-[18px] font-medium">
