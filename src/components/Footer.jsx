@@ -8,12 +8,12 @@ const Footer = () => {
       <div className="w-full lg:flex block container justify-between pt-5 items-center">
         <p className="text-white font-semibold text-xl md:text-[29px]">Kredo</p>
         <div className="flex items-center gap-x-5 ">
-          <a
+          <Link
             className="text-white font-semibold text-sm md:text-[19px]"
-            href=""
+            to="/affilate-program"
           >
             Реферальная программа
-          </a>
+          </Link>
           <Link
             className="text-white font-semibold text-sm md:text-[19px]"
             to="contact"
