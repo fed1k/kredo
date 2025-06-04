@@ -64,7 +64,7 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   className="text-[#33D1FF] text-[16px] md:text-[18px] mb-5"
                 >
-                  @KREDOSUPPORT
+                  @KredoSupport
                 </a>
               </div>
               <img
